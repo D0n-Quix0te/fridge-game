@@ -1,0 +1,53 @@
+// MAJOR TASK #1: DYNAMICALLY CREATE BUTTONS
+      // =================================================================================
+      // 1. Create a for-loop to iterate through the letters array.
+      for (i = 0; i < letters.length; i++) { 
+      
+      var letterBtn = $("<button>");
+      // Inside the loop...
+      // 2. Create a variable named "letterBtn" equal to $("<button>");
+      letterBtn.addClass("letter-button letter letter-button-button-color");
+      letterBtn.attr("data-letter", letters[i]);
+      letterBtn.text(letters[i]);
+      $("#buttons").append(letterBtn);
+}
+      // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
+      // 4. Then give each "letterBtn" a data-attribute called "data-letter", with a value eqaual to "letters[i]"
+      // 5. Then give each "letterBtns" a text equal to "letters[i]".
+      // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
+      // Be sure to test that your code works for this major task, before proceeding to the next one!
+      // MAJOR TASK #2: ATTACH ON-CLICK EVENTS TO "LETTER" BUTTONS
+      // =================================================================================
+$(".letter-button").on("click", function() {
+        var fridgeMagnet = $("<div>");
+        fridgeMagnet.addClass("letter fridge-color");
+        fridgeMagnet.text($(this).data("letter"));
+        $("#display").append(fridgeMagnet);
+      });
+$(document).keypress( function( evt ) {
+        var fridgeMagnet = $("<div>");
+        fridgeMagnet.addClass("letter fridge-color");
+        fridgeMagnet.text( evt.key );
+        $("#display").append(fridgeMagnet);
+      });
+      
+      // 7. Create an "on-click" event attached to the ".letter-button" class.
+      // Inside the on-click event...
+      // 8. Create a variable called "fridgeMagnet" and set the variable equal to a new div.
+      // 9. Give each "fridgeMagnet" the following classes: "letter fridge-color".
+      // 10. Then chain the following code onto the "fridgeMagnet" variable: .text($(this).data("letter"))
+      // 11. Lastly append the fridgeMagnet variable to the "#display" div (provided);
+      // Be sure to test that your code works for this major task, before proceeding to the next one!
+      // MAJOR TASK #3: ATTACH ON-CLICK EVENTS TO "CLEAR" BUTTON
+      // =================================================================================
+$("#clear").on("click", function() {
+$("#display").empty()
+});
+      // 12. Create an "on-click" event attached to the "#clear" button id.
+      // Inside the on-click event...
+      // 13. Use the jQuery "empty()" method to clear the contents of the "#display" div.
+    });
+  </script>
+</body>
+
+</html>
